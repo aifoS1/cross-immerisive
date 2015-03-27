@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SugarApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js' %>
+  <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js' %>
+ 
+
+   
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+  <% if user_signed_in? %>
+	  <li>
+	  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+	  </li>
+	  <% else %>
+	  <li>
+	  	<%= link_to('Login', new_user_session_path)  %>  
+	  </li>
+   <% end %>
+
+<%= yield %>
+
+</body>
+</html>
