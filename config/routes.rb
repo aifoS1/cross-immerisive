@@ -4,12 +4,14 @@ Rails.application.routes.draw do
 
   resources :dashboards, only: [:new, :show, :call_api]
 
-  post '/dashboards', to: 'dashboards#call_api'
+  get '/dashboards', to: 'dashboards#call_api'
 
   devise_for :users
   resources :users
 
   root to: 'dashboards#new'
+
+  resources :daily_servings, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

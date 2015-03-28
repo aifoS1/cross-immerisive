@@ -16,6 +16,7 @@ class FoodsController < ApplicationController
   end
 
   def create
+    binding.pry
 
   end
 

@@ -10,7 +10,7 @@ class DashboardsController < ApplicationController
   end
 
   def call_api
-
+  
     response = Food.call_api(params["food"])
  
     respond_to do |format|

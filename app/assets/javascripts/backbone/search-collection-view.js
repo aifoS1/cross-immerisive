@@ -1,6 +1,6 @@
-var FoodCollectionView = Backbone.View.extend({
+var SearchCollectionView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'search-results'
+  className: 'search-results',
   initialize: function(){
     this.render();
   },
@@ -9,7 +9,7 @@ var FoodCollectionView = Backbone.View.extend({
     var thisCollView = this;
 
     this.collection.models.forEach(function(model){
-      var newView = new FoodLiView({model: model});
+      var newView = new SearchView({model: model});
 
       thisCollView.$el.append(newView.$el);
     })

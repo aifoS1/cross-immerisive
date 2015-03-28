@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-has_many :servings, class_name: DailyServing
+has_many :servings, class_name: "DailyServing"
 has_many :consumed_foods, through: :servings, source: :food
 
 # servings.rb

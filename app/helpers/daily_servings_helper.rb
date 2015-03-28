@@ -1,0 +1,2 @@
+module DailyServingsHelper
+end
