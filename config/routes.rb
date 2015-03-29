@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   root to: 'dashboards#new'
 
-  resources :daily_servings, only: [:create]
+  resources :daily_servings, only: [:destroy]
 
-  get '/userfoods', to: 'users#user_day'
+  get '/userfoods', to: 'daily_servings#user_day'
 
 
 

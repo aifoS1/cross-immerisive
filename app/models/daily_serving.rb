@@ -1,6 +1,9 @@
 class DailyServing < ActiveRecord::Base
 
- belongs_to :food
+ # has_many :foods, :through => :users
  belongs_to :user
+ belongs_to :food
+
+
 
 end

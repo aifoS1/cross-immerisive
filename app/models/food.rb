@@ -1,5 +1,6 @@
 class Food < ActiveRecord::Base
-  belongs_to :user
+  has_many :daily_servings
+  has_many :users, :through => :daily_servings
   
  def self.call_api(query) 
    baseURL = "https://api.nutritionix.com/v1_1/search/"

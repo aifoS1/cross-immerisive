@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 has_many :servings, class_name: "DailyServing"
-has_many :consumed_foods, through: :servings, source: :food
+has_many :foods, :through => :servings
+
+# has_many :servings, class_name: "DailyServing"
+# has_many :consumed_foods, through: :servings, source: :food
 
 # servings.rb
 # belongs_to :food

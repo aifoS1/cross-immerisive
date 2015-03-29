@@ -15,35 +15,37 @@ var SearchView = Backbone.View.extend({
    "click .add": 'addtoDB'
   },
   addtoDB: function(){
-   console.log("added");   
+    var name = this.model.attributes.item_name
+    var sugars = this.model.attributes.nf_sugars
+    var servings = $('input[name=amount]').val();
 
-  var name = this.model.attributes.item_name
-  var sugars = this.model.attributes.nf_sugars
-  var servings = $('input[name=amount]').val();
-
-
-     var userFood = new UserFood({
+    var userFood = new UserFood({
         name: name,
         sugar_amount: sugars,
         amount: servings 
      })
 
      userFood.save();
+
      this.showUserDay();
    
   },
   showUserDay: function(){
 
-     var userFoodCollection = new UserFoodCollection;
+    var userFoodCollection = new UserFoodCollection;
  
- userFoodCollection.fetch({
-   url: '/userfoods',
-   success: function(data){ console.log(data)}
- });
-
-debugger;
-
-  }
-
-  
+    userFoodCollection.fetch({
+      url: '/userfoods',
+      success: function(collection, data){
+      var view = new UserFoodCollectionView({
+        collection: userFoodCollection 
+        });
+       
+      view.render();    
+      },
+     error: function(request, data) {
+      console.log("error")
+    }
+  });
+  }  
 })

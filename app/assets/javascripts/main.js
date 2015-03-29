@@ -1,15 +1,4 @@
 
- //  function callApi(values){
-	//   $.ajax({
-	//   	url: '/dashboards',
-	//   	type: 'post',
-	//     dataType: 'json',
-	//     data: values,
-	//     success: renderFoods
- //     });
-	// }
-
-
 $(function(){
  var searchCollection = new SearchCollection;
 	$('#submit').on("click", function(){
@@ -26,6 +15,7 @@ $(function(){
     	  var view = new SearchCollectionView({
     	  	collection: searchCollection
     	  });
+    	  $("#search-results-container").empty();
     	  view.render();    
     	}
    });

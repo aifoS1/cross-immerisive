@@ -14,6 +14,6 @@ var SearchCollectionView = Backbone.View.extend({
       thisCollView.$el.append(newView.$el);
     })
 
-    $('body').append(this.$el);
+    $('#search-results-container').append(this.$el);
   }
 })
