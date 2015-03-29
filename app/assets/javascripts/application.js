@@ -17,8 +17,7 @@
 //= require backbone/search
 //= require backbone/search-collection
 //= require backbone/user/user-food-item
-
-
+//= require backbone/user/user-food-item-collection
 
 
 //= require_tree .

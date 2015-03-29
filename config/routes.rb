@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :foods
 
-  resources :dashboards, only: [:new, :show, :call_api]
+  resources :dashboards, only: [:new, :show, :call_api, :create]
 
   get '/dashboards', to: 'dashboards#call_api'
 
@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   root to: 'dashboards#new'
 
   resources :daily_servings, only: [:create]
+
+  get '/userfoods', to: 'users#user_day'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

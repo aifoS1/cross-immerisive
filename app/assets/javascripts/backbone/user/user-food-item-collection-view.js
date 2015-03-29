@@ -1,4 +1,4 @@
-var UserFoodCollection = Backbone.Collection.extend({
+var UserFoodCollectionView = Backbone.View.extend({
 
 	
 })

@@ -29,7 +29,21 @@ var SearchView = Backbone.View.extend({
      })
 
      userFood.save();
+     this.showUserDay();
    
+  },
+  showUserDay: function(){
+
+     var userFoodCollection = new UserFoodCollection;
+ 
+ userFoodCollection.fetch({
+   url: '/userfoods',
+   success: function(data){ console.log(data)}
+ });
+
+debugger;
+
   }
+
   
 })
