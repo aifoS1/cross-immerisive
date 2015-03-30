@@ -20,7 +20,7 @@ class DailyServingsController < ApplicationController
   def destroy
     Pry.start(binding)
     Food.destroy(params["id"].to_i)
-    DailyServing.destroy(food_id: params["id"].to_i)
+    DailyServing.destroy(params["food_id"].to_i)
     #when completed send back 
 
   end

@@ -23,13 +23,13 @@ class DashboardsController < ApplicationController
     serving = params["amount"]
     sugar_amount = params["sugar_amount"]
 
-   food = Food.new(name: food_name, sugar_amount: sugar_amount )
-   if food.save
-    current_user.servings.create(
-       food_id: food.id,
-       day: Date.today,
-       amount: serving )
-     end
+    food = Food.new(name: food_name, sugar_amount: sugar_amount )
+     if food.save
+      current_user.servings.create(
+         food_id: food.id,
+         day: Date.today,
+         amount: serving )
+       end
 
      render :new
 
