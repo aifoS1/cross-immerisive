@@ -17,13 +17,9 @@ var UserFoodView = Backbone.View.extend({
    "click .remove-food": 'remove'
   }, 
   remove: function(){
-     debugger;
+  
     this.$el.remove();
-    data = {
-      id: this.model.id,
-      food_id: this.model.attributes.food_id
-    }
-    this.model.destroy(data)
+     this.model.destroy()
   }
 
 })

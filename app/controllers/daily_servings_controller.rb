@@ -2,14 +2,16 @@ class DailyServingsController < ApplicationController
 
   def user_day
     @daily_servings = current_user.servings.where(day: Date.today)
-    
-    # foods =  user_food.map do |x|
-    #   x.food.name
-    # end
 
     respond_to do |format|
       format.json 
     end
+  end
+
+  def show
+    daily_servings = current_user.servings.where(day: Date.today)
+     @total_sugar = daily_servings.sum(:amount)
+    
   end
 
   def update
@@ -18,11 +20,11 @@ class DailyServingsController < ApplicationController
   end
 
   def destroy
-    Pry.start(binding)
-    Food.destroy(params["id"].to_i)
-    DailyServing.destroy(params["food_id"].to_i)
-    #when completed send back 
-
+    # Food.destroy(params["id"].to_i)
+    DailyServing.destroy(params["id"].to_i)
+    respond_to do |format|
+      format.json { render :json => {} }
+    end
   end
 
 end

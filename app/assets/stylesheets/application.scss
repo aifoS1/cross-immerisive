@@ -14,7 +14,18 @@
  *= require_self
  */
 
- .user-foods {
- margin-left: 44%;
-  margin-top: -86%;
+ #search-results-container{
+ 	float: left;
  }
+ #user-choices-container {
+ 	/* margin-left: 66%;
+     margin-top: -4%;*/
+     float: right;
+     margin-right: 20%;
+    /*margin-left: 44%;
+	margin-top: -86%;*/
+ 	 .user-foods {
+	 
+   }
+ }
+ 

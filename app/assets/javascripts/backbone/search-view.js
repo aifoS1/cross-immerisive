@@ -19,13 +19,13 @@ var SearchView = Backbone.View.extend({
     var sugars = this.model.attributes.nf_sugars
     var servings = $('input[name=amount]').val();
 
-    var userFood = new UserFood({
+    var food = new Food({
         name: name,
         sugar_amount: sugars,
         amount: servings 
      })
 
-     userFood.save();
+     food.save();
 
      this.showUserDay();
    
@@ -35,7 +35,7 @@ var SearchView = Backbone.View.extend({
     var userFoodCollection = new UserFoodCollection;
  
     userFoodCollection.fetch({
-      url: '/userfoods',
+      // url: '/daily_servings',
       success: function(collection, data){
       var view = new UserFoodCollectionView({
         collection: userFoodCollection 

@@ -1,5 +1,5 @@
 class Food < ActiveRecord::Base
-  has_many :daily_servings
+  has_many :daily_servings, dependent: :destroy
   has_many :users, :through => :daily_servings
   
  def self.call_api(query) 

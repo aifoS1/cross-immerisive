@@ -1,14 +1,12 @@
 class FoodsController < ApplicationController
-
-  def index
-
-    foods = Food.all
-
+ 
+ def call_api
+  
+    response = Food.call_api(params["food"])
+ 
     respond_to do |format|
-
-      format.json { render :json => foods }
+      format.json { render :json => response }
     end
-
   end
 
   def update
@@ -16,7 +14,21 @@ class FoodsController < ApplicationController
   end
 
   def create
+    food_name = params["name"]
+    serving = params["amount"].to_i
+    sugar_amount = params["sugar_amount"]
 
+    total_sugar = serving * sugar_amount
+    Pry.start(binding)
+    food = Food.new(name: food_name, sugar_amount: sugar_amount )
+     if food.save
+      current_user.servings.create(
+         food_id: food.id,
+         day: Date.today,
+         amount: total_sugar )
+       end
+
+     render :new
   end
 
   def show

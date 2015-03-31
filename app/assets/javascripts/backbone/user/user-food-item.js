@@ -1,26 +1,18 @@
 var UserFood = Backbone.Model.extend({
-  url: '/dashboards',
+  // destroy: function(model){
 
-
-  // fetch: function(attributes, options) {
-  //   options = _.defaults((options || {}), {url: "http://your.save.url.com/"});
-  //   return Backbone.Model.prototype.save.call(this, attributes, options);
-  // },
-
-  destroy: function(model){
-
-     debugger;
-    $.ajax({
+  //    debugger;
+  //   $.ajax({
       
-      url: '/daily_servings/' + model.id,
-      method: 'delete',
-      // data: model.food_id,
-      success: function(data){
+  //     url: '/daily_servings/' + model.food_id,
+  //     method: 'delete',
+  //     // data: model.food_id,
+  //     success: function(data){
          
-      //   this.View.render();
-       }
-  })
-   }
+  //     //   this.View.render();
+  //      }
+  // })
+  //  }
 
 })
 

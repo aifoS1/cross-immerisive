@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :foods
+  resources :foods, only: [:new, :show, :call_api, :create]
 
-  resources :dashboards, only: [:new, :show, :call_api, :create]
+  #resources :dashboards, only: [:new, :show, :call_api, :create]
 
-  get '/dashboards', to: 'dashboards#call_api'
+  get '/foods', to: 'foods#call_api'
 
   devise_for :users
   resources :users
 
-  root to: 'dashboards#new'
+  root to: 'foods#new'
 
-  resources :daily_servings, only: [:destroy]
+  resources :daily_servings, only: [:destroy, :show]
 
-  get '/userfoods', to: 'daily_servings#user_day'
+  get '/daily_servings', to: 'daily_servings#user_day'
 
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327195537) do
+ActiveRecord::Schema.define(version: 20150330222703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,7 @@ ActiveRecord::Schema.define(version: 20150327195537) do
     t.integer "user_id"
     t.integer "food_id"
     t.date    "day"
-    t.decimal "amount"
-  end
-
-  create_table "dashboards", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal "amount",  default: 1.0
   end
 
   create_table "foods", force: :cascade do |t|
