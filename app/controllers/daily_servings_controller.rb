@@ -13,7 +13,7 @@ class DailyServingsController < ApplicationController
     @total_sugar = @daily_servings.sum(:amount)
    
     respond_to do |format|
-      format.html { render "show" }
+      format.html { render "daily" }
       format.json 
     end
     
@@ -21,7 +21,12 @@ class DailyServingsController < ApplicationController
 
   def weekly_sugar
      @daily_servings = current_user.servings.where(day: 1.week.ago..Date.today)
+     @total_sugar = @daily_servings.sum(:amount)
 
+    respond_to do |format|
+      format.html { render "weekly" }
+      format.json 
+    end
   end
 
   def update

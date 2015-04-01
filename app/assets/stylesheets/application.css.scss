@@ -41,12 +41,25 @@
    }
  }
 
- #sugar-containter{
+ .cup-and-sugar {
+ 	float: left;
+ 	position: relative;
+ 	width: 250px;
  	height: 300px;
- 	width: 150px;
- 	background-color: grey;
- 	 	/*border: black solid 3px;*/
-    box-sizing: border-box;
+ }
+
+ .cup {
+ 	position: absolute;
+ 	width: 250px;
+ 	height: 300px;
+ 	z-index: 1;
+ 	background-image: url('cup.png');
+ 	background-size: 250px 300px;
+ }
+
+ .sugar {
+ 	position: absolute;
+ 	z-index: 0;
  }
 
 
