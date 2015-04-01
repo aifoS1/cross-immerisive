@@ -1,8 +1,5 @@
 <h1>Welcome to SugarWatch, <%= current_user.name %></h1>
-<aside>
-<a href="/daily_servings/<%= current_user.id %>"><h4>Sugar for the week</a></h4>
-<a href="/daily_servings/<%= current_user.id %>"><h4>Sugar for the day</a></h4>
-</aside>
+
 
 
 <form id="nutri-search">
@@ -22,9 +19,11 @@
 <section id='user-choices-container'>
  <h3>Your Food</h3>
 
+ <a href="/daily_servings/<%= current_user.id %>"><button>Sugarfy your day</button></a>
+
 </section>
 
-<select id="sugar-view">
+<section id="sugar-view">
 
-</select>
+</section>
 

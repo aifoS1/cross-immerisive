@@ -4,6 +4,7 @@
   <title>SugarApp</title>
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore.js"></script>
    <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js' %>
   <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js' %>
@@ -13,13 +14,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="body-container">
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
   <% if user_signed_in? %>
+    <nav>
 	  <li>
 	  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
 	  </li>
+<a href="<%= weekly_sugar_path %>"><h4>Sugar for the week</h4></a>
+<a href="<%= daily_sugar_path %>"><h4>Sugar for the day</h4></a>
+<a href=" /"><h4>Home</h4></a>
+</nav>
 	  <% else %>
 	  <li>
 	  	<%= link_to('Login', new_user_session_path)  %>  
@@ -27,6 +34,7 @@
    <% end %>
 
 <%= yield %>
-
+</div>
 </body>
+
 </html>

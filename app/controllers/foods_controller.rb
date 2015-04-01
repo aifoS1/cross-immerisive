@@ -19,7 +19,7 @@ class FoodsController < ApplicationController
     sugar_amount = params["sugar_amount"]
 
     total_sugar = serving * sugar_amount
-    Pry.start(binding)
+
     food = Food.new(name: food_name, sugar_amount: sugar_amount )
      if food.save
       current_user.servings.create(

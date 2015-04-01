@@ -11,7 +11,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= ./templates
 
 //= require backbone/search

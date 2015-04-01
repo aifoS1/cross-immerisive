@@ -10,10 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ 
  *= require_self
  */
+ @import "bourbon";
+ @import "neat";
 
+ body {
+ 	width: 1000px;
+ }
+
+ .body-container {
+  @include outer-container;
+}
+.daily-sugar {
+	padding: 0.5em, 0.5em;
+}
  #search-results-container{
  	float: left;
  }
@@ -28,4 +40,16 @@
 	 
    }
  }
+
+ #sugar-containter{
+ 	height: 300px;
+ 	width: 150px;
+ 	background-color: grey;
+ 	 	/*border: black solid 3px;*/
+    box-sizing: border-box;
+ }
+
+
+
+
  
