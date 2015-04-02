@@ -12,9 +12,11 @@ var sugarTotal = function(data){
 	var cupCount = parseInt(1 + Math.max(totalSugar - 1, 0) / 200);
 
 	for (var i = 0; i < cupCount; i++) {
+		// if cup isn't the last cup fill it all the way
 		if (i < cupCount - 1) {
 			var fillLevel = 200;
 		} else {
+			//fill up the next cup with the remainder
 			var fillLevel = totalSugar % 200;
 		}
 		setSugarContainer([fillLevel], i);
@@ -49,12 +51,14 @@ var setSugarContainer = function(sugar, cupIndex){
 	    .attr('width', width)
 	    .attr('x', function(d, i){ return 0 })
 	    .attr('y', function(d, i){ return height ; })
-	    .attr('fill', 'blue')
+	    .attr('fill', '#DCDCDC')
 	    .transition()
 	      .duration(1000)
 	      .ease('bounce')
 	      .attr('height', function(d, i){ return scaleY(d) })
 	      .attr('y',function(d, i){ return  height - scaleY(d); })
+
+	      //convert total sugar to pixels to append image
 }
 
 function getData(){

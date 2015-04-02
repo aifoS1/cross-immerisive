@@ -2,6 +2,7 @@ console.log("UserFoodView")
 
 var UserFoodView = Backbone.View.extend({
  tagName: 'li',
+ className: 'food-choice',
   initialize: function(){
     this.render();
   },

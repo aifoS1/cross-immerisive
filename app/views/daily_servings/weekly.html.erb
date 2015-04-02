@@ -1,6 +1,5 @@
 <section id="weekly" class="sugar-show">
-	<h1>show</h1>
-	<h4><%= @total_sugar %></h4>
+	<h4>Your weekly sugar total is: <%= @total_sugar %>g</h4>
 	<% cup_count = [1 + (@total_sugar.to_i - 1)/200, 1].max %>
 	<% cup_count.times do |i| %>
 		<div class="cup-and-sugar">

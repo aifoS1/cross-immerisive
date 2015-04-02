@@ -15,7 +15,7 @@ var UserFoodCollectionView = Backbone.View.extend({
       thisCollView.$el.append(newView.$el);
     })
 
-    $('#user-choices-container').append(this.$el);
+    $(this.$el).insertAfter('#food-diary');
   }
 })
 	

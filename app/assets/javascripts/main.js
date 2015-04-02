@@ -14,9 +14,10 @@ function renderUserFoodCollection(){
 
 $(function(){
  var searchCollection = new SearchCollection;
-	$('#submit').on("click", function(){
+	$('form').on("submit", function(e){
+    e.preventDefault();
 	  var query = $('input').val();
-	  $('input').val('');
+	  $('input[type="text"]').val('');
 
 	  values = {
 	  	  food: query
