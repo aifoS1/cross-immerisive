@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'foods#new'
+  
 
   devise_for :users
   resources :users
+  root to: 'foods#new'
 
   resources :foods, only: [:new, :show, :create]
   get '/foods', to: 'foods#call_api'
