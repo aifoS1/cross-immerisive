@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   
-
-  devise_for :users
-  resources :users
   root to: 'foods#new'
+  
+  resource :session, only: [:new, :create, :destroy]
 
   resources :foods, only: [:new, :show, :create]
   get '/foods', to: 'foods#call_api'
 
-  resources :daily_servings, only: [:destroy]
+  resources :daily_servings, only: [:destroy, :create]
   get '/daily_servings', to: 'daily_servings#user_day', as: :servings
-  get '/daily_sugar', to: 'daily_servings#daily_sugar', as: :daily_sugar
-  get '/weekly_sugar', to: 'daily_servings#weekly_sugar', as: :weekly_sugar
+  # get '/daily_sugar', to: 'daily_servings#daily_sugar', as: :daily_sugar
+  # get '/weekly_sugar', to: 'daily_servings#weekly_sugar', as: :weekly_sugar
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

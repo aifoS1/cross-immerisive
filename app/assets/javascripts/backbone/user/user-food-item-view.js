@@ -15,10 +15,10 @@ var UserFoodView = Backbone.View.extend({
     
   },
   events: {
-   "click .remove-food": 'remove'
+   "click .removeFood": 'remove'
   }, 
   remove: function(){
-  
+    
     this.$el.remove();
      this.model.destroy()
   }

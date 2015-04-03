@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
      if @user.save
       login!(@user)
-      redirect_to edit_user_path(@user)
+      redirect_to root_path
     else
       render :new
     end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
  def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
-    redirect_to root_path
+    redirect_to new_user_path
 end
 
 private

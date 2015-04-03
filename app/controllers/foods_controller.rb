@@ -1,7 +1,6 @@
 class FoodsController < ApplicationController
  
  def call_api
-  
     response = Food.call_api(params["food"])
  
     respond_to do |format|
@@ -17,7 +16,7 @@ class FoodsController < ApplicationController
     food_name = params["name"]
     serving = params["amount"].to_i
     sugar_amount = params["sugar_amount"]
-
+  
     total_sugar = serving * sugar_amount
 
     food = Food.new(name: food_name, sugar_amount: sugar_amount )

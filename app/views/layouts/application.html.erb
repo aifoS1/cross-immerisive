@@ -8,44 +8,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore.js"></script>
    <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js' %>
   <%= javascript_include_tag  'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js' %>
-
-
-   
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="body-container">
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-  <% if user_signed_in? %>
-  <nav>
-     <ul>
-	  <li>
-	  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-	  </li>
-    <li>
-<a href="<%= weekly_sugar_path %>">Sugar for the week</a>
-</li>
- <li>
-<a href="<%= daily_sugar_path %>">Sugar for the day</a>
-</li>
-<li>
-<a href=" /">Home</a>
-</li>
- 
-	  <% else %>
-	  <li>
-	  	<%= link_to('Login', new_user_session_path)  %>  
-	  </li>
- 
-  <% end %>
-    </ul>
-  </nav>
-
-
-<%= yield %>
-</div>
+    <%= yield %>
 </body>
 
 </html>

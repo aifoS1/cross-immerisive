@@ -19,33 +19,41 @@ var SearchView = Backbone.View.extend({
     var sugars = this.model.attributes.nf_sugars
     var servings = $('input[name=amount]').val();
 
-    var food = new Food({
+    // var food = new Food({
+    //     name: name,
+    //     sugar_amount: sugars,
+    //     amount: servings 
+    //  })
+var userFoodCollection = new UserFoodCollection;
+var userFood = userFoodCollection.create({
         name: name,
         sugar_amount: sugars,
         amount: servings 
-     })
+     });   
+userFood.set();
 
-     food.save();
+     // food.save();
+     // var userFoodCollection = new UserFoodCollection;
 
-     this.showUserDay();
+
+     // this.showUserDay();
    
-  },
-  showUserDay: function(){
+   }
+  // showUserDay: function(){
 
-    var userFoodCollection = new UserFoodCollection;
+  //   var userFoodCollection = new UserFoodCollection;
  
-    userFoodCollection.fetch({
-      // url: '/daily_servings',
-      success: function(collection, data){
-      var view = new UserFoodCollectionView({
-        collection: userFoodCollection 
-        });
-       
-      view.render();    
-      },
-     error: function(request, data) {
-      console.log("error")
-    }
-  });
-  }  
+  //   userFoodCollection.fetch({
+  //     // url: '/daily_servings',
+  //     success: function(collection, data){
+  //     var view = new UserFoodCollectionView({
+  //       collection: userFoodCollection 
+  //       });
+  //     view.render();    
+  //     },
+  //    error: function(request, data) {
+  //     console.log("error")
+  //   }
+  // });
+  // }  
 })

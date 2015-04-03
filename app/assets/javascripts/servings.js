@@ -80,5 +80,5 @@ function getData(){
 }
 
 window.onload = function(){
-	 getData()
+	 // getData()
 }

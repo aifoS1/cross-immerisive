@@ -1,18 +1,9 @@
-function renderUserFoodCollection(){
-   var userFoodCollection = new UserFoodCollection;
-   userFoodCollection.fetch({
-    success: function(){ 
-      var view = new UserFoodCollectionView({
-      collection: userFoodCollection
-    })
-      $(".user-foods").empty();
-      view.render();  
-    }
-   });
-}
 
+// App.csrfToken = $("meta[name='csrf-token']").attr('content');
 
 $(function(){
+ var userFoodCollection = new UserFoodCollection;
+
  var searchCollection = new SearchCollection;
 	$('form').on("submit", function(e){
     e.preventDefault();
@@ -22,7 +13,6 @@ $(function(){
 	  values = {
 	  	  food: query
 	  	}
-  
    searchCollection.fetch({
    	data: values,
     success: function(data){ 
@@ -36,7 +26,18 @@ $(function(){
    // callApi(values)
       
  });
-   renderUserFoodCollection()
+   // renderUserFoodCollection()
+   var userFoodRouter = new UserFoodRouter(userFoodCollection);
+    Backbone.history.start();
+
+    Backbone.sync = (function(original) {
+      return function(method, model, options) {
+      options.beforeSend = function(xhr) {
+      xhr.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));
+    };
+    original(method, model, options);
+  };
+})(Backbone.sync);
 });
 
 

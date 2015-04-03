@@ -1,6 +1,6 @@
 <section id="daily" class="sugar-show">
-	
-	<h4>Your sugar total for today is: <% @total_sugar%>g</h4>
+
+	<h4>Your sugar total for today is: <%= @total_sugar%>g</h4>
 	<% cup_count = [1 + (@total_sugar.to_i - 1)/200, 1].max %>
 	<% cup_count.times do |i| %>
 		<div class="cup-and-sugar">

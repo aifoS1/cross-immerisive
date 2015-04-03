@@ -1,0 +1,17 @@
+<nav class="login-signup">
+	<ul>
+		<li>LOG IN</li>
+	</ul>
+</nav>
+
+<section class="form-login">
+	<%= form_for @user, as: :session, url: session_url do |f| %>
+	<%= f.text_field :email, placeholder: "EMAIL: hi@hello.com" %>
+	    <br/>
+	<%= f.password_field :password, placeholder: "PASSWORD:" %>
+	<br/>
+	<%= f.submit "LOG IN" %>
+	<br>
+	<% end %>
+	<button><a href="/forgot">I FORGOT MY PASSWORD</a></button>
+</section>

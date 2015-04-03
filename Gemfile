@@ -29,12 +29,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bourbon'
 gem 'neat'
 #to precompile handlebars
- gem 'handlebars_assets'
+gem 'handlebars_assets'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
 #Use for secure log in
-gem 'devise'
+
 
 gem 'unirest'
 # Use Capistrano for deployment
