@@ -22,10 +22,8 @@ $(function () {
     	  view.render();    
     	}
    });
-   // callApi(values)
-      
  });
-   // renderUserFoodCollection()
+
    var userFoodRouter = window.userFoodRouter = new UserFoodRouter();
 
     Backbone.history.start();

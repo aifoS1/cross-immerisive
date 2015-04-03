@@ -8,27 +8,26 @@ class DailyServingsController < ApplicationController
     end
   end
 
-  # def daily_sugar
- 
-  #   @daily_servings = current_user.servings.where(day: Date.today)
-  #   @total_sugar = @daily_servings.sum(:amount)
+  def daily_sugar
+    @daily_servings = current_user.servings.where(day: Date.today)
+    @total_sugar = @daily_servings.sum(:amount)
    
-  #   respond_to do |format|
-  #     format.html { render "daily" }
-  #     format.json 
-  #   end
+    respond_to do |format|
+      format.html { render "daily" }
+      format.json 
+    end
     
-  # end
+  end
 
-  # def weekly_sugar
-  #    @daily_servings = current_user.servings.where(day: 1.week.ago..Date.today)
-  #    @total_sugar = @daily_servings.sum(:amount)
+  def weekly_sugar
+     @daily_servings = current_user.servings.where(day: 1.week.ago..Date.today)
+     @total_sugar = @daily_servings.sum(:amount)
 
-  #   respond_to do |format|
-  #     format.html { render "weekly" }
-  #     format.json 
-  #   end
-  # end
+    respond_to do |format|
+      format.html { render "weekly" }
+      format.json 
+    end
+  end
 
   # def index
   #   @servings = current_user.servings.where(day: 1.week.ago..Date.today)

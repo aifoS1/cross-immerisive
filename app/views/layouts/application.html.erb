@@ -12,6 +12,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="body-container">
+    <% if current_user %>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to('Logout', '/session', :method => :delete) %>        
+        </li>
+        <li>
+         <a href="<%= weekly_sugar_path %>">Sugar for the week</a>
+        </li>
+        <li>
+         <a href="<%= daily_sugar_path %>">Sugar for the day</a>
+        </li>
+        <li>
+        <a href=" /">Home</a>
+        </li>
+     <% else %>
+      <li>
+        <%= link_to('Login', new_session_path)  %>  
+      </li>
+    <% end %>
+      </ul>
+  </nav>
+  </div>
 
     <%= yield %>
 </body>

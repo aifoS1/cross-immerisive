@@ -1,15 +1,26 @@
-<section id="daily" class="sugar-show">
+<main id="sugar-dashboard">
+	<aside id="sugar-btns">
+		<div id="daily" class="selected"><h4>Day</h4></div>
+		<div id="weekly"><h4>Week</h4></div>
+	</aside>
 
-	<h4>Your sugar total for today is: <%= @total_sugar%>g</h4>
-	<% cup_count = [1 + (@total_sugar.to_i - 1)/200, 1].max %>
-	<% cup_count.times do |i| %>
-		<div class="cup-and-sugar">
-			<div class="cup">
+	<aside id="right">
+    <p>There are 200 grams of sugar in a cup.</p>
+    <p id="total"></p>
+	</aside>
+
+	<section id="sugar-show">
+		<% cup_count = [1 + (@total_sugar.to_i - 1)/200, 1].max %>
+		<% cup_count.times do |i| %>
+			<div class="cup-and-sugar">
+				<div class="cup">
+				</div>
+				  <svg id="sugar-containter-<%= i %>" class="sugar">
+				</svg>
 			</div>
-			<svg id="sugar-containter-<%= i %>" class="sugar">
-			</svg>
-		</div>
-	<% end %>
-</section>
+		<% end %>
+	</section>
+</main>
 
 <%= javascript_include_tag "servings.js" %>
+

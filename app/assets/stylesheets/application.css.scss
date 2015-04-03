@@ -19,10 +19,14 @@
 
  body {
    padding: 20px 20px;
- 	max-width: 1000px;
- 	margin: 0 auto;
+   max-width: 1000px;
+   font-size: 100%;
+   margin: 0 auto;
+   font-family: Arial;
  }
-
+ h4{
+ 	font-size: 1.5em;
+ }
  li {
  	list-style: none;
  	padding: 15px 5px;
@@ -30,24 +34,22 @@
 
  .body-container {
  	width: inherit;
- 	padding-left: 15px;
- 	padding-right: 15px;
+ 	/*padding-left: 15px;
+ 	padding-right: 15px;*/
 
-/*  @include outer-container;	*/
+ @include outer-container;	
 }
 
 nav {
 	margin-bottom: 40px;
-  li{
-  /*	float: right;*/
+  li {
    display: inline-block;
    background-color: lemonchiffon;
    border-radius: 8px;
    padding: 0.5em 0.5em;
 
-  	a{
-  	text-decoration: none;
-
+  	a {
+  	 text-decoration: none;
     }
   }
 }
@@ -153,3 +155,35 @@ h3 {
  	}
  
  }
+
+#sugar-dashboard{
+ @include outer-container;
+
+   aside {
+  	margin-bottom: 15px;
+  }
+
+  #sugar-btns{
+    @include span-columns(6);
+    float: left;
+     div{
+	   padding: 0.5em 0.25em;
+	   display: inline-block;
+	   background-color: #AFEEEE;
+	   color: white;
+    }
+    #right{
+ /*	@include span-columns(6);*/
+    /*float: left;*/
+   }
+   .selected {
+ 	background-color: orange;
+   }
+  }
+   #sugar-show{
+   	 margin-top: 46px;
+   	 /*margin-left: 5%;
+   	 margin-right: 5%;*/
+   }
+}
+ 

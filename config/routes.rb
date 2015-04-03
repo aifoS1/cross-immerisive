@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   resources :daily_servings, only: [:destroy, :create]
   get '/daily_servings', to: 'daily_servings#user_day', as: :servings
-  # get '/daily_sugar', to: 'daily_servings#daily_sugar', as: :daily_sugar
-  # get '/weekly_sugar', to: 'daily_servings#weekly_sugar', as: :weekly_sugar
+  get '/daily_sugar', to: 'daily_servings#daily_sugar', as: :daily_sugar
+  get '/weekly_sugar', to: 'daily_servings#weekly_sugar', as: :weekly_sugar
 
 
   # The priority is based upon order of creation: first created -> highest priority.
