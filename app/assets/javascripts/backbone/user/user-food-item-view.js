@@ -1,5 +1,3 @@
-console.log("UserFoodView")
-
 var UserFoodView = Backbone.View.extend({
  tagName: 'li',
  className: 'food-choice',
@@ -10,17 +8,16 @@ var UserFoodView = Backbone.View.extend({
     this.$el.html(this.template());
   },
   template: function(){
-
-  return HandlebarsTemplates['show'](this.model.attributes); 
-    
+   return HandlebarsTemplates['show'](this.model.attributes);    
   },
   events: {
    "click .removeFood": 'remove'
   }, 
-  remove: function(){
-    
-    this.$el.remove();
-     this.model.destroy()
+  remove: function(){  
+    var food = this.model;
+    food.destroy();
+    // this.$el.remove();
+    //  var this.model.destroy()
   }
 
 })

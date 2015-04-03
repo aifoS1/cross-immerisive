@@ -1,21 +1,20 @@
 
-// App.csrfToken = $("meta[name='csrf-token']").attr('content');
-
-$(function(){
- var userFoodCollection = new UserFoodCollection;
-
- var searchCollection = new SearchCollection;
-	$('form').on("submit", function(e){
+$(function () {
+  var searchCollection = window.searchCollection 
+                       = new SearchCollection;
+  
+  $('form').on("submit", function(e){
     e.preventDefault();
 	  var query = $('input').val();
 	  $('input[type="text"]').val('');
 
 	  values = {
-	  	  food: query
-	  	}
-   searchCollection.fetch({
-   	data: values,
-    success: function(data){ 
+	  	food: query
+	  }
+
+    searchCollection.fetch({
+    	data: values,
+      success: function(data){ 
     	  var view = new SearchCollectionView({
     	  	collection: searchCollection
     	  });
@@ -27,7 +26,8 @@ $(function(){
       
  });
    // renderUserFoodCollection()
-   var userFoodRouter = new UserFoodRouter(userFoodCollection);
+   var userFoodRouter = window.userFoodRouter = new UserFoodRouter();
+
     Backbone.history.start();
 
     Backbone.sync = (function(original) {

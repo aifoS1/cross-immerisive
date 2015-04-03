@@ -40,23 +40,19 @@ class DailyServingsController < ApplicationController
   # end
 
   def create
-    Pry.start(binding)
-    food_name = params["name"]
-    serving = params["amount"].to_i
-    sugar_amount = params["sugar_amount"]
-  
-    total_sugar = serving * sugar_amount
+    food = Food.find(params[:food_id])
+    total_sugar = params[:servings].to_i * food.sugar_amount
 
-    food = Food.new(name: food_name, sugar_amount: sugar_amount )
-    if food.save
-      current_user.servings.create(
-         food_id: food.id,
-         day: Date.today,
-         amount: total_sugar )
-      end
+    @serving = current_user.servings.create({
+       food: food,
+       day: Date.today,
+       amount: total_sugar
+    })
 
-    render :new
-   
+
+    respond_to do |format|
+      format.json
+    end 
   end
 
   def update
@@ -71,5 +67,15 @@ class DailyServingsController < ApplicationController
       format.json { render :json => {} }
     end
   end
+
+  private
+
+  def food_params
+    params.permit(:name, :sugar_amount)
+  end
+
+  # def serving_params
+  #   params.require(:serving).permit(:amount)
+  # end
 
 end

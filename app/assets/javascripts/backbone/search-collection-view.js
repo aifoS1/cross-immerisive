@@ -3,6 +3,7 @@ var SearchCollectionView = Backbone.View.extend({
   className: 'search-results',
   initialize: function(){
     this.render();
+    this.listenTo(this.collection, 'change', this.render);
   },
   render: function(){
     this.$el.empty();
