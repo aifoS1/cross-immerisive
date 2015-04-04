@@ -1,3 +1,90 @@
-// Place all the styles related to the daily_servings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colors';
+
+.daily-sugar {
+	padding: 0.5em 0.5em;
+}
+ 
+
+ .cup-and-sugar {
+ 	/*@include outer-container;*/
+ 	float: left;
+ 	position: relative;
+ 	width: 325px;
+ 	height: 300px;
+
+	 .cup {
+	 	/*@include span-columns(6);
+*/	 	position: absolute;
+	 	width: 325px;
+	 	height: 300px;
+	 	z-index: 1;
+	 	background-image: url('new-cup.png');
+	 	background-size: 325px 300px;
+	   }
+
+	 .sugar {
+	 	
+	 	position: absolute;
+	 	z-index: 0;
+	 }
+ }
+
+ .food-btns{
+ 	margin-top: 15px;
+ 	color: white;
+
+ 	span{
+ 			padding: 0.5em 0.25em;
+ 	  
+ 	   &.removeFood{
+       background-color: salmon;
+       margin-left: 8px;
+ 	   }
+ 	   &.addFave{
+ 	   	background-color: mediumseagreen;
+ 	   	margin-right: 8px;
+ 	   }
+ 	}
+ 
+ }
+
+ .food-choice  {
+ 	 background-color: #eee;
+ 	 margin-bottom: 10px;
+
+ 	> *{
+ 	  margin-bottom: 10px;
+ 	}
+ 
+ }
+
+#sugar-dashboard{
+ @include outer-container;
+
+   aside {
+  	margin-bottom: 15px;
+  }
+
+  #sugar-btns{
+    @include span-columns(6);
+    float: left;
+     div{
+	   padding: 0.5em 0.25em;
+	   display: inline-block;
+	   background-color: #AFEEEE;
+	   color: white;
+    }
+    #right{
+ /*	@include span-columns(6);*/
+    /*float: left;*/
+   }
+   .selected {
+ 	background-color: orange;
+   }
+  }
+   #sugar-show{
+   	 margin-top: 46px;
+   	 /*margin-left: 5%;
+   	 margin-right: 5%;*/
+   }
+}

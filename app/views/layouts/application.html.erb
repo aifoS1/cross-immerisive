@@ -12,30 +12,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="body-container">
-    <% if current_user %>
-    <nav>
+  <header>
+  <% if current_user %>
+    <nav class="clearfix">
       <ul>
-        <li>
-          <%= link_to('Logout', '/session', :method => :delete) %>        
+        <li id="logo">
+          <%= link_to 'SugarWatch', root_path %>
         </li>
         <li>
-         <a href="<%= weekly_sugar_path %>">Sugar for the week</a>
+            <%= link_to('Logout', '/session', :method => :delete) %>        
         </li>
         <li>
-         <a href="<%= daily_sugar_path %>">Sugar for the day</a>
+          <a href=" /">Home</a>
         </li>
+         <li>
+           <a href="<%= daily_sugar_path %>">Sugarfy</a>
+          </li>
+       <% else %>
         <li>
-        <a href=" /">Home</a>
+          <%= link_to('Login', new_session_path)  %>  
         </li>
-     <% else %>
-      <li>
-        <%= link_to('Login', new_session_path)  %>  
-      </li>
-    <% end %>
-      </ul>
-  </nav>
-  </div>
+      <% end %>
+        </ul>
+        </nav>
+      </header>
+   
+ 
 
     <%= yield %>
 </body>

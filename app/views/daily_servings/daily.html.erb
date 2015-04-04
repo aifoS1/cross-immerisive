@@ -10,17 +10,10 @@
 	</aside>
 
 	<section id="sugar-show">
-		<% cup_count = [1 + (@total_sugar.to_i - 1)/200, 1].max %>
-		<% cup_count.times do |i| %>
-			<div class="cup-and-sugar">
-				<div class="cup">
-				</div>
-				  <svg id="sugar-containter-<%= i %>" class="sugar">
-				</svg>
-			</div>
-		<% end %>
+	
 	</section>
 </main>
 
 <%= javascript_include_tag "servings.js" %>
 
+<script>totalCups()</script>
