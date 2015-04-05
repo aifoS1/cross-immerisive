@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
   root to: 'foods#new'
+
+  resources :users
   
   resource :session, only: [:new, :create, :destroy]
+  get '/welcome', to: 'sessions#welcome'
 
   resources :foods, only: [:new, :show, :create]
   get '/foods', to: 'foods#call_api'

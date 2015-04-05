@@ -3,7 +3,7 @@ $(function () {
   var searchCollection = window.searchCollection 
                        = new SearchCollection;
   
-  $('form').on("submit", function(e){
+  $('#nutri-search').on("submit", function(e){
     e.preventDefault();
 	  var query = $('input').val();
 	  $('input[type="text"]').val('');

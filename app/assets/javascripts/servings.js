@@ -9,7 +9,7 @@ var sugarTotal = function(data){
 	totalCups(totalSugar)
 	var cupCount = parseInt(1 + Math.max(totalSugar - 1, 0) / 200);
 
-	$("#total").html("Total: " + totalSugar +"gm.")
+	$("#total").html("Your Total: " + totalSugar +"g.")
 
 	for (var i = 0; i < cupCount; i++) {
 		// if cup isn't the last cup fill it all the way
@@ -30,7 +30,6 @@ var setSugarContainer = function(sugar, cupIndex){
 	var sugarSVG = d3.select("#sugar-containter-" + cupIndex)
 	.attr('width', width)
 	.attr('height', height)
-	debugger;
 	var scaleY = d3.scale.linear()
 	.domain([0, 200])
 	.range([ height * 0.15, height * 0.72])
@@ -92,8 +91,7 @@ function getData(){
 function totalCups(totalSugar){
 		$('#sugar-show').empty();
 		var cupCount = Math.max(parseInt(1 + Math.max(totalSugar - 1, 0) / 200));
-		// var $cup = $('<div class="cup"></div>');
-  //   var $svg = $('<svg id="sugar-containter-" + i + ">')
+
 		for (var i =0; i < cupCount; i++){
 			var $div = $('<div class="cup-and-sugar"><div class="cup"></div><svg id="sugar-containter-' + i + '"></svg></div>');
 			$('#sugar-show').append($div);
@@ -102,5 +100,4 @@ function totalCups(totalSugar){
 
 window.onload = function(){
 	  getData()
-	  
 }

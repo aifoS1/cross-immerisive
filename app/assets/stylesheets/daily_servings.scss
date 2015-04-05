@@ -49,7 +49,7 @@
  }
 
  .food-choice  {
- 	 background-color: #eee;
+ 	 background-color: $grey;
  	 margin-bottom: 10px;
 
  	> *{
@@ -63,10 +63,19 @@
 
    aside {
   	margin-bottom: 15px;
+
   }
 
+  article{
+    padding: 0.5em 0.25em;
+    line-height: 1.25em;
+  }
+  #total {
+    /*font-weight: bold;*/
+  }
+   
   #sugar-btns{
-    @include span-columns(6);
+    @include span-columns(4);
     float: left;
      div{
 	   padding: 0.5em 0.25em;
@@ -83,7 +92,8 @@
    }
   }
    #sugar-show{
-   	 margin-top: 46px;
+    @include span-columns(8);
+   	/* margin-top: 46px;*/
    	 /*margin-left: 5%;
    	 margin-right: 5%;*/
    }

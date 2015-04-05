@@ -26,27 +26,27 @@ $logo:'Walter Turncoat', cursive;
 
  body {
    /*padding: 20px 20px;*/
-   max-width: 1000px;
    font-size: 100%;
-   margin: 0 auto;
    font-family: Arial;
  }
-/* h4{
- 	font-size: 1.5em;
- }*/
+  h1 {
+  	font-size: 2em;
+  }
  li {
  	list-style: none;
  	padding: 15px 5px;
  }
-
+ a {
+ 	text-decoration: none;
+ }
 header {
  width: 100%;
  background-color: $primary;
 
  nav {
+ 	margin: 0 auto;
 	margin-bottom: 40px;
-    
-    width:100%;
+    max-width: 1000px;
 	padding-left: 0.75em;
 	padding-right: 0.75em;
 
@@ -57,27 +57,66 @@ header {
 	   font-size: 1.25em;
 
 	  	a {
-	  	 text-decoration: none;
 	  	 color: white;
 	    }
 	  }
     }	
 }
-
-#logo{
-	float: left;
-	font-family: $logo;
-	font-size: 1.75em;
-	color: white;
+#container {
+max-width: 1000px;
+margin: 0 auto;
 }
-
- 
-
 .clearfix:after {
   clear: both;
   display: block;
   content: "";
 }
+
+#logo{
+	float: left;
+	/*width: 200px;
+	height: 50px;
+*/
+	font-family: $logo;
+	font-size: 1.75em;
+	color: white;
+	/*background-image: url('sugar.png');*/
+}
+
+#welcome {
+	/*width: 100%;*/
+	margin-left: 20%;
+    margin-right: 20%;
+	margin-top: 8%;
+
+	 h1{
+	   margin-bottom: 10px;
+	   color: $primary;
+	 }
+	li {
+		background-color: $grey;
+		padding: 1em 1em;
+		margin-bottom: 15px;
+		text-align: center;
+		a {
+		  color: $primary;
+		  font-weight: bold;
+		}
+
+		
+		/*display: inline-block;*/
+	}
+
+	article{
+	margin-bottom: 10%;
+	line-height: 1.5em;
+	}
+
+
+}
+
+ 
+
 
 
 
