@@ -116,6 +116,36 @@ margin: 0 auto;
 
 }
 
+.daily-sugar {
+	padding: 0.5em 0.5em;
+}
+ 
+
+ .cup-and-sugar {
+ 	/*@include outer-container;*/
+ 	float: left;
+ 	position: relative;
+ 	width: 325px;
+ 	height: 300px;
+
+	 .cup {
+	 	/*@include span-columns(6);
+*/	 	position: absolute;
+	 	width: 325px;
+	 	height: 300px;
+	 	z-index: 1;
+	 	background-image: url('new-cup.png');
+	 	background-size: 325px 300px;
+	   }
+
+	 .sugar {
+	 	
+	 	position: absolute;
+	 	z-index: 0;
+	 }
+ }
+
+
  
 
 
