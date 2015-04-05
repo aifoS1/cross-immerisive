@@ -31,6 +31,8 @@ gem 'neat'
 #to precompile handlebars
 gem 'handlebars_assets'
 
+gem 'rails_12factor', group: :production
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 #Use for secure log in
