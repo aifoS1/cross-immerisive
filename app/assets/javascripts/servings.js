@@ -9,7 +9,7 @@ var sugarTotal = function(data){
 	totalCups(totalSugar)
 	var cupCount = parseInt(1 + Math.max(totalSugar - 1, 0) / 200);
 
-	$("#total").html("Your Total: " + totalSugar +"g.")
+	$("#total").html("Your Total: " + totalSugar +"g")
 
 	for (var i = 0; i < cupCount; i++) {
 		// if cup isn't the last cup fill it all the way

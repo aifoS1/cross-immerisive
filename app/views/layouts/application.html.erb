@@ -18,13 +18,13 @@
       <ul>
         <% if current_user %>
         <li id="logo">
-          <%= link_to 'SugarWatch', root_path %>
+          <%= link_to 'SugarWatch', new_food_path %>
         </li>
         <li>
             <%= link_to('Logout', '/session', :method => :delete) %>        
         </li>
         <li>
-          <a href=" /">Home</a>
+          <a href="/foods/new">Home</a>
         </li>
          <li>
            <a href="<%= daily_sugar_path %>">Sugarfy</a>

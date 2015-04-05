@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: 'foods#new'
+  root to: 'sessions#welcome'
 
   resources :users
   

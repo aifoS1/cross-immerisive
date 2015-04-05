@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login!(@user)
-      redirect_to root_path
+      redirect_to new_food_path
     else
       render :new
     end

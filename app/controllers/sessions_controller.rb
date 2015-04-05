@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     # to try to post to users#create because User.new has not
     # persisted, yet.  We'll need to override this in our form
     if current_user 
-      redirect_to root_path 
+      redirect_to new_food_path 
     end
       @user = User.new
   end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
      
     if @user && @user.authenticate(session_params[:password])
       login!(@user)
-      redirect_to root_path
+      redirect_to new_food_path
     else
       redirect_to '/users', :method => :create
     end

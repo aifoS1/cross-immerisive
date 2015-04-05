@@ -17,9 +17,6 @@ class Food < ActiveRecord::Base
       sort:{
         field: "_score",
         order: "desc"
-      },
-      filters:{
-        item_type:2
       }
    }
 
@@ -30,3 +27,7 @@ class Food < ActiveRecord::Base
    end
  end
 end
+# ,
+#       filters:{
+#         item_type:2
+#       }
