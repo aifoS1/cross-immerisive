@@ -5,7 +5,7 @@ var UserFoodRouter = Backbone.Router.extend({
  },
 
   routes: { 
-    'foods/new': 'index'
+    '': 'index'
   },
 
   index: function(){
