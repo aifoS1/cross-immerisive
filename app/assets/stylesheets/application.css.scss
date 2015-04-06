@@ -10,17 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- 
  *= require_self
  */
- @import "bourbon";
- @import "neat";
- @import 'reset';
- @import url('https://fonts.googleapis.com/css?family=Walter+Turncoat');
- 	
- @import 'foods';
- @import 'daily_servings';
- @import 'colors';
+
+@import "bourbon";
+@import "neat";
+@import 'reset';
+@import url('https://fonts.googleapis.com/css?family=Walter+Turncoat');
+	
+@import 'foods';
+@import 'colors';
 
 $logo:'Walter Turncoat', cursive;
 

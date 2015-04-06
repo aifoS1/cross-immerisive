@@ -59,6 +59,35 @@ h3 {
   }
   }
 }
+.food-btns{
+  margin-top: 15px;
+  color: white;
+
+  span{
+      padding: 0.5em 0.25em;
+    
+     &.removeFood{
+       background-color: salmon;
+       margin-left: 8px;
+     }
+     &.addFave{
+      background-color: mediumseagreen;
+      margin-right: 8px;
+     }
+  }
+ 
+ }
+
+ .food-choice  {
+   background-color: $grey;
+   margin-bottom: 10px;
+
+  > li{
+    margin-bottom: 10px;
+  }
+ 
+ }
+
 
 .add{
   background-color: #5F9EA0;

@@ -3,7 +3,6 @@
 .daily-sugar {
 	padding: 0.5em 0.5em;
 }
- 
 
  .cup-and-sugar {
  	/*@include outer-container;*/
@@ -29,34 +28,6 @@
 	 }
  }
 
- .food-btns{
- 	margin-top: 15px;
- 	color: white;
-
- 	span{
- 			padding: 0.5em 0.25em;
- 	  
- 	   &.removeFood{
-       background-color: salmon;
-       margin-left: 8px;
- 	   }
- 	   &.addFave{
- 	   	background-color: mediumseagreen;
- 	   	margin-right: 8px;
- 	   }
- 	}
- 
- }
-
- .food-choice  {
- 	 background-color: $grey;
- 	 margin-bottom: 10px;
-
- 	> *{
- 	  margin-bottom: 10px;
- 	}
- 
- }
 
 #sugar-dashboard{
  @include outer-container;
@@ -92,12 +63,8 @@
 	   background-color: #AFEEEE;
 	   color: white;
     }
-    #right{
- /*	@include span-columns(6);*/
-    /*float: left;*/
-   }
    .selected {
- 	background-color: orange;
+ 	background-color: grey;
    }
   }
    #sugar-show{
