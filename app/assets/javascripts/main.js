@@ -1,4 +1,4 @@
-
+ 
 $(function () {
   var searchCollection = window.searchCollection 
                        = new SearchCollection;
@@ -11,7 +11,6 @@ $(function () {
 	  values = {
 	  	food: query
 	  }
-
     searchCollection.fetch({
     	data: values,
       success: function(data){ 
