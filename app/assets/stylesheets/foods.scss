@@ -10,6 +10,8 @@ h3 {
   }
 #search-results-container{
   @include span-columns(6);
+  overflow: scroll;
+  height: 500px;
  	float: left;
    ul{
      margin-top: 5%;

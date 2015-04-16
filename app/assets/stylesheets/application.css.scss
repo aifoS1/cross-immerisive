@@ -25,20 +25,18 @@
 $logo:'Walter Turncoat', cursive;
 
 
- body {
-
-   /*padding: 20px 20px;*/
-   font-size: 100%;
-   font-family: Arial;
+body {
+  font-size: 100%;
+  font-family: Arial;
  }
-  h1 {
-  	font-size: 2em;
+h1 {
+  font-size: 2em;
   }
- li {
+li {
  	list-style: none;
  	padding: 15px 5px;
  }
- a {
+a {
  	text-decoration: none;
  }
 header {
@@ -48,7 +46,7 @@ header {
  nav {
  	margin: 0 auto;
 	margin-bottom: 40px;
-    max-width: 1000px;
+  max-width: 1000px;
 	padding-left: 0.75em;
 	padding-right: 0.75em;
 
@@ -62,7 +60,7 @@ header {
 	  	 color: white;
 	    }
 	  }
-    }	
+  }	
 }
 #container {
 max-width: 1000px;
@@ -76,9 +74,6 @@ margin: 0 auto;
 
 #logo{
 	float: left;
-	/*width: 200px;
-	height: 50px;
-*/
 	font-family: $logo;
 	font-size: 1.75em;
 	color: white;
@@ -86,9 +81,8 @@ margin: 0 auto;
 }
 
 #welcome {
-	/*width: 100%;*/
 	margin-left: 20%;
-    margin-right: 20%;
+  margin-right: 20%;
 	margin-top: 8%;
 
 	 h1{
@@ -104,17 +98,22 @@ margin: 0 auto;
 		  color: $primary;
 		  font-weight: bold;
 		}
-
-		
-		/*display: inline-block;*/
 	}
 
 	article{
 	margin-bottom: 10%;
 	line-height: 1.5em;
 	}
+}
 
-
+footer {
+	position: absolute;
+	bottom: 0;
+	padding: 0.5em 0.5em;
+	background-color: $primary;
+	width: 100%;
+	font-size: 0.75em;
+	left: 0;
 }
 
  
