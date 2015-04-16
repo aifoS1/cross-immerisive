@@ -7,8 +7,11 @@
  h3 {
    margin-bottom: 15px;
  }
- #search-results-container{
+ #search-container{
   @include span-columns(6);
+ }
+
+ #search-results-container{
   overflow: scroll;
   height: 500px;
   float: left;
@@ -24,7 +27,7 @@
     margin-bottom: 15px;
     color: white;
 
-    h4{
+    h4 {
       padding-bottom: 0.5em;
     }
     input {
@@ -41,15 +44,25 @@
 }
 
 #food-diary{
-  margin-top: -10px;
+ /* margin-top: -10px;*/
+  background-color: $tomato;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 #nutri-search{
-  @include span-columns(12);
+  /*@include span-columns(6);*/
+  margin-bottom: 10px;
     input[type="text"]{
       width: 200px;
       border-radius: 8px;
-      padding: 5px 10px;
-      text-align: center;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    input[type="submit"]{
+      background-color: $tomato;
+      color: white;
+      padding: 0.5em 0.5em;
+      font-size: 1em;
     }
     p {
       font-size: 0.7em;
@@ -87,7 +100,7 @@
 
 .add {
   background-color: #5F9EA0;
-    border-bottom: brown 1.75px solid;
+  border-bottom: brown 1.75px solid;
   padding: 0.5em 1em;
   display: inline-block;
   border-radius: 3px;

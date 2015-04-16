@@ -2,22 +2,25 @@
 <main class="dashboard">
 	<h3>Hi, <%= current_user.name %></h3>
 
- <form id="nutri-search">
-		<input type="text" name="search" placeholder="Search and add food for today">
-		<input type="submit">
-		<p>Powered by <a href="http://www.nutritionix.com/api">Nutritionix API</a> </p>
-  </form>
+<section id='search-container'>
 
- <section id='search-results-container'>
+	<form id="nutri-search">
+			<input type="text" name="search" placeholder="Search and add food for today">
+			<input type="submit" value="Search">
+			<p>Powered by <a href="http://www.nutritionix.com/api">Nutritionix API</a> </p>
+	</form>
 
+  <section id='search-results-container'></section>
 
- </section>
+</section>
 
  <section id='user-choices-container' class="clearfix">
 	  <h3 id="food-diary">Your Food Diary</h3>
 	  <ul class="user-foods"></ul>
 	  <a href="<%= daily_sugar_path %>"><button>Sugarfy your day</button></a>
-	</section>
+ </section>
+
+ 
 
 </main>
 

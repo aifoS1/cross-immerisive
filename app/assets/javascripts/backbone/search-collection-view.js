@@ -16,5 +16,6 @@ var SearchCollectionView = Backbone.View.extend({
     })
 
     $('#search-results-container').append(this.$el);
+    // $(this.$el).insertAfter('#nutri-search');
   }
 })

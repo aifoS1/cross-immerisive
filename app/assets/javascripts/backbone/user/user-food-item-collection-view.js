@@ -14,8 +14,6 @@ var UserFoodCollectionView = Backbone.View.extend({
       var newView = new UserFoodView({model: model});
       thisCollView.$el.append(newView.$el);
     })
-
-    // $('#user-choices-container').append(this.$el)
   }
 
 })
