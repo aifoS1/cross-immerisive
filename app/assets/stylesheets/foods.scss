@@ -1,101 +1,102 @@
 @import 'colors';
 
 .dashboard{
-   @include outer-container;
-   padding: 0.5em 0.75em;
+ @include outer-container;
+ padding: 0.5em 0.75em;
 
-  
-h3 {
-	margin-bottom: 15px;
-  }
-#search-results-container{
+ h3 {
+   margin-bottom: 15px;
+ }
+ #search-results-container{
   @include span-columns(6);
   overflow: scroll;
   height: 500px;
- 	float: left;
-   ul{
+  float: left;
+    ul {
      margin-top: 5%;
    }
    li {
     text-align: justify;
     padding-left: 10px;
-     background-color: lighten(#FF6347, 10%);
-     margin-bottom: 15px;
-     border-radius: 8px;
-     color: white;
-      h4{
-        padding-bottom: 0.5em;
-      }
-      input {
-         width: 10%;
-      }
-   }
- 	
-  }
- #user-choices-container {
- 	@include span-columns(6);
- 	text-align: center;
- 	padding-left: 5%;
- 	padding-right: 5%;
-   /*  margin-top: -4%;*/
-     float: right;
- 	 .user-foods {
-	 
-   }
- }
+    background-color: rgba(255, 184, 0, 0.92);
+    border-bottom: brown 2px solid;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    color: white;
 
- #food-diary{
-  margin-top: -10px;
- }
-#nutri-search{
-  @include span-columns(12);
-  input[type="text"]{
-    width: 200px;
-    border-radius: 8px;
-    padding: 5px 10px;
-    text-align: center;
-  }
-  p {
-  font-size: 0.7em;
-  padding-top: 5px;
-  }
+    h4{
+      padding-bottom: 0.5em;
+    }
+    input {
+      width: 10%;
+    }
   }
 }
-.food-btns{
+#user-choices-container {
+  @include span-columns(6);
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  float: right;
+}
+
+#food-diary{
+  margin-top: -10px;
+}
+#nutri-search{
+  @include span-columns(12);
+    input[type="text"]{
+      width: 200px;
+      border-radius: 8px;
+      padding: 5px 10px;
+      text-align: center;
+    }
+    p {
+      font-size: 0.7em;
+      padding-top: 5px;
+    }
+  }
+}
+.food-btns {
   margin-top: 15px;
   color: white;
+  cursor: pointer;
 
   span{
-      padding: 0.5em 0.25em;
+    padding: 0.5em 0.25em;
     
-     &.removeFood{
+      &.removeFood{
        background-color: salmon;
        margin-left: 8px;
      }
      &.addFave{
       background-color: mediumseagreen;
       margin-right: 8px;
-     }
+    }
   }
- 
- }
+}
 
- .food-choice  {
-   background-color: $grey;
-   margin-bottom: 10px;
+.food-choice {
+ background-color: $grey;
+ margin-bottom: 10px;
 
   > li{
     margin-bottom: 10px;
   }
- 
- }
+}
 
-
-.add{
+.add {
   background-color: #5F9EA0;
+    border-bottom: brown 1.75px solid;
   padding: 0.5em 1em;
   display: inline-block;
-  border-radius: 5px;
-  margin-left: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10em;
   margin-top: 8px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: darken(#5F9EA0, 10%);
+  }
 }
